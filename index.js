@@ -145,7 +145,9 @@ function findBestTimeFrame(tz1, tz2, startHour, endHour){
     var newLocalEnd = (endHour - totalDifference) % 24;
     if(newLocalStart < 0) newLocalStart = 24 + newLocalStart;
     if(newLocalEnd < 0) newLocalEnd = 24 + newLocalEnd;
-    return {"error": "Sorry... no matching frame... you'll have to work between "+newLocalStart+" and "+newLocalEnd+"!"};
+    var newLocalStartTxt = getTextHour(newLocalStart);
+    var newLocalEndTxt = getTextHour(newLocalEnd);
+    return {"error": "Sorry... no matching frame... you'll have to work between "+newLocalStartTxt+" and "+newLocalEndTxt+"!"};
   }
 }
 function getTextHour(hour){
