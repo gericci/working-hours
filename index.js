@@ -126,11 +126,19 @@ function findBestTimeFrame(tz1, tz2, startHour, endHour){
     if(bestLocalEndHour < 0 ) bestLocalEndHour = 24 + bestLocalEndHour;
     console.log("target : " + bestTargetStartHour + " => " + bestTargetEndHour);
     console.log("local : " + bestLocalStartHour + " => " + bestLocalEndHour);
+    var bestTargetStartHourTxt = getTextHour(bestTargetStartHour);
+    var bestTargetEndHourTxt = getTextHour(bestTargetEndHour);
+    var bestLocalStartHourTxt = getTextHour(bestLocalStartHour);
+    var bestLocalEndHourTxt = getTextHour(bestLocalEndHour);
     return {
       bestTargetStartHour: bestTargetStartHour,
       bestTargetEndHour: bestTargetEndHour,
       bestLocalStartHour: bestLocalStartHour,
-      bestLocalEndHour: bestLocalEndHour
+      bestLocalEndHour: bestLocalEndHour,
+      bestTargetStartHourTxt: bestTargetStartHourTxt,
+      bestTargetEndHourTxt: bestTargetEndHourTxt,
+      bestLocalStartHourTxt: bestLocalStartHourTxt,
+      bestLocalEndHourTxt: bestLocalEndHourTxt
     };
   }else{
     var newLocalStart = (startHour - totalDifference) % 24;
@@ -139,6 +147,16 @@ function findBestTimeFrame(tz1, tz2, startHour, endHour){
     if(newLocalEnd < 0) newLocalEnd = 24 + newLocalEnd;
     return {"error": "Sorry... no matching frame... you'll have to work between "+newLocalStart+" and "+newLocalEnd+"!"};
   }
+}
+function getTextHour(hour){
+  var split =
+    [
+        (hour > 0) ? Math.floor(hour) : Math.ceil(hour),
+        hour % 1
+    ];
+    var minutes = ""+split[1]*60;
+    if(minutes.length == 1) minutes +=0;
+    return split[0]+":"+minutes;
 }
 app.listen(9999);
 console.log('9999 is the magic port');

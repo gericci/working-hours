@@ -1,9 +1,9 @@
 <% if (result && !error) { %>
 <div id="answer">
-	<p>The best meeting hours for your timezone would range from <strong id="timef"><%= result.bestLocalStartHour %></strong> to
-	        <strong id="timeto"><%= result.bestLocalEndHour %></strong> &mdash; local time.</p>
-  <p>The remote timezone will range from <strong id="ttimef"><%= result.bestTargetStartHour %></strong> to
-	        <strong id="ttimeto"><%= result.bestTargetEndHour %></strong>.</p>
+	<p>The best meeting hours for your timezone would range from <time id="timef" data-value="<%= result.bestLocalStartHour %>"><%= result.bestLocalStartHourTxt %></time> to
+	        <time id="timeto" data-value="<%= result.bestLocalEndHour %>"><%= result.bestLocalEndHourTxt %></time> &mdash; local time.</p>
+  <p>The remote timezone will range from <time id="ttimef" data-value="<%= result.bestTargetStartHour %>"><%= result.bestTargetStartHourTxt %></time> to
+	        <time id="ttimeto" data-value="<%= result.bestTargetEndHour %>"><%= result.bestTargetEndHourTxt %></time>.</p>
   <div id="the-canvas">
     <svg id="mySVG" version="1.1" viewbox="0 0 300 300">
 		</svg>
