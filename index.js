@@ -7,7 +7,7 @@ var compression = require('compression');
 var rp = require('request-promise');
 var Q = require('q');
 
-var googleApiKey =  process.argv[2];
+var googleApiKey =  process.argv[2] || process.env.API_KEY;
 
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
