@@ -15,7 +15,7 @@ function creatRect(zX, zY, zW, zH, zColor, zSVG) {
   return(zId);
 }
 
-function initGraph(){
+window.onload = function transf() {
   if(document.getElementById('mySVG'))
     {
       if (document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Image", "1.1")) {
@@ -76,31 +76,4 @@ function initGraph(){
       var zRange = creatRect(zPace * zFrom, 30, proot, 120, "rgba(255,255,255,.3)", zSVG);
     }
   }
-}
-window.onload = function transf() {
-  initGraph();
-  document.getElementById("check-gmt").addEventListener("submit", function(e) {
-      if (window.fetch) {
-          e.preventDefault();
-          e.stopPropagation();
-          var t = new Headers;
-          t.set("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
-          fetch("go", {
-              method: "POST",
-              headers: t,
-              body: "TZ1=" + document.getElementById("TZ1").value+"&TZ2="+document.getElementById("TZ2").value+"&hfrom="+document.getElementById("hfrom").value+"&hto="+document.getElementById("hto").value
-          }).then(function(e) {
-              e.text().then(function(e) {
-                console.log(e);
-                var answer = document.getElementById("answer");
-                if(answer) answer.outerHTML = "";
-                var error = document.getElementById("error");
-                if(error) error.outerHTML = "";
-                var form = document.getElementsByTagName("form")[0] ;
-                form.innerHTML = form.innerHTML + e;
-                initGraph();
-              })
-          })
-      }
-    });
 };
