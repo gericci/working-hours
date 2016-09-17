@@ -112,7 +112,10 @@ function findBestTimeFrame(tz1, tz2, startHour, endHour){
   //if(targetStartHour < 0) targetStartHour = 24 + targetStartHour;
   //if(targetEndHour < 0) targetEndHour = 24 + targetEndHour;
   //if(targetStartHour <= endHour && startHour <= targetEndHour){
-  if(targetEndHour >= startHour && targetEndHour <= endHour || targetStartHour >= startHour && targetStartHour <= endHour||targetStartHour<=startHour && targetEndHour >= endHour){
+  if(targetStartHour != endHour && targetEndHour != startHour &&
+    (targetEndHour >= startHour && targetEndHour <= endHour
+    || targetStartHour >= startHour && targetStartHour <= endHour
+    ||targetStartHour<=startHour && targetEndHour >= endHour)){
     //overlap
     //targetStartHour = targetStartHour % 24;
     //targetEndHour = targetEndHour % 24;
