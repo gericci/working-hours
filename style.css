@@ -82,6 +82,8 @@ legend {
 	left: -9000px;
 }
 
+.error {background: #AA0101; padding: 1rem; margin: 2rem 0;}
+
 /* ---------------------- THE CANVAS ------------------------- */
 
 #the-canvas {width: 100%; max-width: 400px; height: 15rem; margin: 2rem auto 0;}
