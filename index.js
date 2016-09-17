@@ -17,7 +17,7 @@ app.set('view engine', 'ejs');
 
 app.get('/', function(req, res) {
 
-  res.render('index', { result: null, req: {TZ1:"lille", TZ2:"nyc", hfrom:"09:00", hto:"17:00"}, error: null });
+  res.render('index', { result: null, req: {TZ1:"", TZ2:"", hfrom:"09:00", hto:"17:00"}, error: null });
 });
 
 app.post('/', function (req, res) {
