@@ -1,0 +1,92 @@
+header, label, main {
+    display: block;
+}
+[type=text], ul {
+    width: 55%;
+    text-align: center;
+}
+.err, [type=text], form, h2, header, ul {
+    text-align: center;
+}
+a, body, div, form, h1, h2, html, label, li, main, p, span, ul {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+body {
+    font: 100%/1.52 system-reg, Arial, sans-serif;
+    color: #FFF;
+    background: #0B1A22;
+	margin: 1rem 5%;
+}
+
+/*! system-font.css v1.1.0 | CC0-1.0 License | github.com/jonathantneal/system-font-face */
+@font-face {
+    font-family: system-reg;
+    font-style: normal;
+    font-weight: 400;
+    src: local(".SFNSText-Regular"), local(".HelveticaNeueDeskInterface-Regular"), local(".LucidaGrandeUI"), local("Ubuntu"), local("Segoe UI"), local("Roboto-Regular"), local("DroidSans"), local("Tahoma");
+}
+@font-face {
+    font-family: system-b;
+    font-style: normal;
+    font-weight: 700;
+    src: local(".SFNSText-Bold"), local(".HelveticaNeueDeskInterface-Bold"), local(".LucidaGrandeUI"), local("Ubuntu Bold"), local("Roboto-Bold"), local("DroidSans-Bold"), local("Segoe UI Bold"), local("Tahoma Bold");
+}
+h1 {
+  font-size: 4vmax;
+}
+p.baseline {
+	font-size: 2vmax;
+  line-height: 1.2;
+}
+fieldset {margin-top: 1rem;}
+fieldset + p {margin-top: 0.7em;}
+
+fieldset {position: relative; padding-top: 2em; border: none;}
+
+fieldset p {padding: 0.7em 0;}
+
+[type=text], [type=time], select {max-width: 280px; padding: 0.7rem 1rem;}
+
+#check-gmt {margin: 2rem 0; margin: 5vmax 0;}
+
+label, legend {
+	font-family: system-b, sans-serif;
+}
+legend {
+	position: absolute;
+	width: 14em;
+	right: auto;
+	top: 0;
+	left: 50%;
+	margin-left: -7em;
+}
+
+.buttons-bar {margin-top: 2rem;}
+[type=submit] {
+  color: #FFF;
+  background: #3D1429;
+  padding: 0.5em 1em;
+  border: 1px solid rgba(255,255,255,.5);
+  border-radius: 0.5em;
+  cursor: pointer;
+}
+
+#answer {background: rgba(255,255,255,.1); padding: 1rem; margin: 2rem 0;}
+/*#answer p {position: relative; display: inline-block; width: 300px;}*/
+
+.notthere {
+	position: absolute;
+	width: auto;
+	left: -9000px;
+}
+.error {background: #AA0101; padding: 1rem; margin: 2rem 0;}
+/* ---------------------- THE CANVAS ------------------------- */
+
+#the-canvas {width: 100%; max-width: 400px; height: 15rem; margin: 2rem auto 0;}
+#mySVG text {fill: #FFF; font-size: 12px; text-anchor: middle;}
+
+@media screen and (min-width: 800px) {
+	fieldset label {display: inline;}
+}

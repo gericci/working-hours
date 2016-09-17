@@ -1,0 +1,13 @@
+{
+    "name": "10kproject",
+    "dependencies": {
+        "express":"4.14.0",
+        "ejs": "1.0.0",
+        "body-parser": "1.15.2",
+        "multer": "1.2.0",
+        "compression": "1.6.2",
+        "request": "2.74.0",
+        "request-promise": "4.1.1",
+        "q": "1.4.1"
+    }
+}
