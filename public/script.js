@@ -1,3 +1,5 @@
+/* Write working hours range in svg */
+
 function creatRect(zX, zY, zW, zH, zColor, zSVG) {
   var svgNS = "http://www.w3.org/2000/svg";
   var zRect = document.createElementNS(svgNS,"rect");
@@ -18,8 +20,9 @@ function creatRect(zX, zY, zW, zH, zColor, zSVG) {
 window.onload = function transf() {
   if(document.getElementById('mySVG'))
     {
-      if (document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Image", "1.1")) {
+      if (document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Structure", "1.1")) {
       var svgNS = "http://www.w3.org/2000/svg";
+      document.getElementById('the-canvas').style.display = 'block';
       var zFromEl = document.getElementById('timef');
       var zToEl = document.getElementById('timeto');
       var ztFromEl = document.getElementById('ttimef');

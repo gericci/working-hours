@@ -2,10 +2,14 @@
 <div id="answer">
 	<p>The best meeting hours for your timezone would range from <time id="timef" data-value="<%= result.bestLocalStartHour %>"><%= result.bestLocalStartHourTxt %></time> to
 	        <time id="timeto" data-value="<%= result.bestLocalEndHour %>"><%= result.bestLocalEndHourTxt %></time> &mdash; local time.</p>
-  <p>The remote timezone will range from <time id="ttimef" data-value="<%= result.bestTargetStartHour %>"><%= result.bestTargetStartHourTxt %></time> to
+  <p>For the remote timezone, it will range from <time id="ttimef" data-value="<%= result.bestTargetStartHour %>"><%= result.bestTargetStartHourTxt %></time> to
 	        <time id="ttimeto" data-value="<%= result.bestTargetEndHour %>"><%= result.bestTargetEndHourTxt %></time>.</p>
   <div id="the-canvas">
-    <svg id="mySVG" version="1.1" viewbox="0 0 300 300">
+		<svg id="mySVG" version="1.1" viewbox="0 0 300 200">
+	    <g>
+	      <title>Possible meeting hours</title>
+	      <desc>This bar chart shows the range of possible meeting hours for the defined towns.</desc>
+	    </g>
 		</svg>
   </div>
 </div>
