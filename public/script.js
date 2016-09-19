@@ -22,7 +22,9 @@ window.onload = function transf() {
     {
       if (document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Structure", "1.1")) {
       var svgNS = "http://www.w3.org/2000/svg";
+
       document.getElementById('the-canvas').style.display = 'block';
+
       var zFromEl = document.getElementById('timef');
       var zToEl = document.getElementById('timeto');
       var ztFromEl = document.getElementById('ttimef');
@@ -33,24 +35,25 @@ window.onload = function transf() {
       var ztTo = ztToEl.getAttribute("data-value");
       var zSVG = document.getElementById('mySVG');
 
-      var zPace = 300 / 24;
+      var zPace = 260 / 24;
 
-      var zTMZ1 = creatRect(0, 30, '100%', 40, "#34839D", zSVG);
-      var zTMZ2 = creatRect(0, 80, '100%', 40, "#47C287", zSVG);
+      var zTMZ1 = creatRect(20, 30, '260', 40, "#34839D", zSVG);
+      var zTMZ2 = creatRect(20, 80, '260', 40, "#47C287", zSVG);
 
       for (var i = 0; i <= 24; i++) {
-          creatRect(zPace * i, 30, 1, 5, "#FFF", zSVG);
+          creatRect((zPace * i)+20, 30, 1, 5, "#FFF", zSVG);
           if(i == Math.round(zFrom)) {
               var ztext = document.createElementNS(svgNS, "text");
-              ztext.setAttributeNS(null, "x", zPace * zFrom);
+              ztext.setAttributeNS(null, "x", (zPace * zFrom)+20);
               ztext.setAttributeNS(null, "y", 25);
+              ztext.setAttribute("class", "from-h");
               zSVG.appendChild(ztext);
               ztext.textContent = zFromEl.innerHTML;
           }
 
           if(i == Math.round(zTo)) {
               var ztext = document.createElementNS(svgNS, "text");
-              ztext.setAttributeNS(null, "x", zPace * zTo);
+              ztext.setAttributeNS(null, "x", (zPace * zTo)+20);
               ztext.setAttributeNS(null, "y", 25);
               zSVG.appendChild(ztext);
               ztext.textContent = zToEl.innerHTML;
@@ -58,15 +61,16 @@ window.onload = function transf() {
 
           if(i == Math.round(ztFrom)) {
               var ztext = document.createElementNS(svgNS, "text");
-              ztext.setAttributeNS(null, "x", zPace * zFrom);
+              ztext.setAttributeNS(null, "x", (zPace * zFrom)+20);
               ztext.setAttributeNS(null, "y", 165);
+              ztext.setAttribute("class", "from-h");
               zSVG.appendChild(ztext);
               ztext.textContent = ztFromEl.innerHTML;
           }
 
           if(i == Math.round(ztTo)) {
               var ztext = document.createElementNS(svgNS, "text");
-              ztext.setAttributeNS(null, "x", zPace * zTo);
+              ztext.setAttributeNS(null, "x", (zPace * zTo)+20);
               ztext.setAttributeNS(null, "y", 165);
               zSVG.appendChild(ztext);
               ztext.textContent = ztToEl.innerHTML;
@@ -76,7 +80,7 @@ window.onload = function transf() {
 
       }
 
-      var zRange = creatRect(zPace * zFrom, 30, proot, 120, "rgba(255,255,255,.3)", zSVG);
+      var zRange = creatRect((zPace * zFrom)+20, 30, proot, 120, "rgba(255,255,255,.3)", zSVG);
     }
   }
 };
