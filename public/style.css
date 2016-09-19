@@ -91,7 +91,7 @@ legend {
 #the-canvas {
   display: none;
   width: 100%;
-  max-width: 400px;
+  max-width: 500px;
   margin: 2rem auto 0;
 }
 #mySVG text {fill: #FFF; font-size: 12px;}

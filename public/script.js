@@ -35,16 +35,16 @@ window.onload = function transf() {
       var ztTo = ztToEl.getAttribute("data-value");
       var zSVG = document.getElementById('mySVG');
 
-      var zPace = 260 / 24;
+      var zPace = 240 / 24;
 
-      var zTMZ1 = creatRect(20, 30, '260', 40, "#34839D", zSVG);
-      var zTMZ2 = creatRect(20, 80, '260', 40, "#47C287", zSVG);
+      var zTMZ1 = creatRect(30, 30, '240', 40, "#34839D", zSVG);
+      var zTMZ2 = creatRect(30, 80, '240', 40, "#47C287", zSVG);
 
       for (var i = 0; i <= 24; i++) {
-          creatRect((zPace * i)+20, 30, 1, 5, "#FFF", zSVG);
+          creatRect((zPace * i)+30, 30, 1, 5, "#FFF", zSVG);
           if(i == Math.round(zFrom)) {
               var ztext = document.createElementNS(svgNS, "text");
-              ztext.setAttributeNS(null, "x", (zPace * zFrom)+20);
+              ztext.setAttributeNS(null, "x", (zPace * zFrom)+30);
               ztext.setAttributeNS(null, "y", 25);
               ztext.setAttribute("class", "from-h");
               zSVG.appendChild(ztext);
@@ -53,7 +53,7 @@ window.onload = function transf() {
 
           if(i == Math.round(zTo)) {
               var ztext = document.createElementNS(svgNS, "text");
-              ztext.setAttributeNS(null, "x", (zPace * zTo)+20);
+              ztext.setAttributeNS(null, "x", (zPace * zTo)+30);
               ztext.setAttributeNS(null, "y", 25);
               zSVG.appendChild(ztext);
               ztext.textContent = zToEl.innerHTML;
@@ -61,7 +61,7 @@ window.onload = function transf() {
 
           if(i == Math.round(ztFrom)) {
               var ztext = document.createElementNS(svgNS, "text");
-              ztext.setAttributeNS(null, "x", (zPace * zFrom)+20);
+              ztext.setAttributeNS(null, "x", (zPace * zFrom)+30);
               ztext.setAttributeNS(null, "y", 165);
               ztext.setAttribute("class", "from-h");
               zSVG.appendChild(ztext);
@@ -70,7 +70,7 @@ window.onload = function transf() {
 
           if(i == Math.round(ztTo)) {
               var ztext = document.createElementNS(svgNS, "text");
-              ztext.setAttributeNS(null, "x", (zPace * zTo)+20);
+              ztext.setAttributeNS(null, "x", (zPace * zTo)+30);
               ztext.setAttributeNS(null, "y", 165);
               zSVG.appendChild(ztext);
               ztext.textContent = ztToEl.innerHTML;
@@ -80,7 +80,7 @@ window.onload = function transf() {
 
       }
 
-      var zRange = creatRect((zPace * zFrom)+20, 30, proot, 120, "rgba(255,255,255,.3)", zSVG);
+      var zRange = creatRect((zPace * zFrom)+30, 30, proot, 120, "rgba(255,255,255,.3)", zSVG);
     }
   }
 };
