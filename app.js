@@ -163,5 +163,6 @@ function getTextHour(hour){
     if(minutes.length == 1) minutes +=0;
     return split[0]+":"+minutes;
 }
-app.listen(9999);
-console.log('9999 is the magic port');
+var port = process.env.PORT || 9999;
+app.listen(port);
+console.log(`${port} is the magic port`);
